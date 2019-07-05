@@ -1,0 +1,372 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第五章-Jenkins前端项目的自动编译和部署 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第六章-Jenkins实现钉钉消息通知自定义.html" />
+    
+    
+    <link rel="prev" href="第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../SUMMARY.html">
+            
+                <a href="../SUMMARY.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    [Jenkins系列教程]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="第一章-Jenkins的安装和功能介绍.html">
+            
+                <a href="第一章-Jenkins的安装和功能介绍.html">
+            
+                    
+                    第一章-Jenkins的安装和功能介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="第二章-Jenkins使用Gitbook实现自动编译和部署.html">
+            
+                <a href="第二章-Jenkins使用Gitbook实现自动编译和部署.html">
+            
+                    
+                    第二章-Jenkins使用Gitbook实现自动编译和部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="第三章-Jenkins使用Gerrit Trigger实现提交tag后自动构建.html">
+            
+                <a href="第三章-Jenkins使用Gerrit Trigger实现提交tag后自动构建.html">
+            
+                    
+                    第三章-Jenkins使用Gerrit Trigger实现提交tag后自动构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.html">
+            
+                <a href="第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.html">
+            
+                    
+                    第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="第五章-Jenkins前端项目的自动编译和部署.html">
+            
+                <a href="第五章-Jenkins前端项目的自动编译和部署.html">
+            
+                    
+                    第五章-Jenkins前端项目的自动编译和部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="第六章-Jenkins实现钉钉消息通知自定义.html">
+            
+                <a href="第六章-Jenkins实现钉钉消息通知自定义.html">
+            
+                    
+                    第六章-Jenkins实现钉钉消息通知自定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第五章-Jenkins前端项目的自动编译和部署</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="jenkins&#x524D;&#x7AEF;&#x9879;&#x76EE;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x8BD1;&#x548C;&#x90E8;&#x7F72;">Jenkins&#x524D;&#x7AEF;&#x9879;&#x76EE;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x8BD1;&#x548C;&#x90E8;&#x7F72;</h3>
+<ul>
+<li><h4 id="&#x9879;&#x76EE;&#x80CC;&#x666F;">&#x9879;&#x76EE;&#x80CC;&#x666F;</h4>
+<ul>
+<li>&#x9879;&#x76EE;&#xFF1A;&#x5FAE;&#x7F51;&#x7AD9;&#x79FB;&#x52A8;&#x7AEF;</li>
+<li>&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF1A;Visual Studio Code</li>
+<li>&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#xFF1A;Angular&#xFF0C;&#x4F7F;&#x7528;Ionic Framework&#x4F5C;&#x4E3A;&#x524D;&#x7AEF;&#x7528;&#x6237;&#x754C;&#x9762;</li>
+<li>&#x6E90;&#x7801;&#x63A7;&#x5236;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF1A;Git</li>
+<li>&#x6E90;&#x7801;&#x5BA1;&#x67E5;&#x8F6F;&#x4EF6;&#xFF1A;Gerrit</li>
+</ul>
+</li>
+<li><h4 id="&#x5B9E;&#x73B0;&#x76EE;&#x6807;">&#x5B9E;&#x73B0;&#x76EE;&#x6807;</h4>
+<p>&#x5B9E;&#x73B0;&#x524D;&#x7AEF;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x53D1;&#x5E03;&#xFF0C;&#x5E76;&#x90E8;&#x7F72;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7;&#x9489;&#x9489;&#x901A;&#x77E5;&#x6784;&#x5EFA;&#x7ED3;&#x679C;&#xFF0C;<strong>&#x82E5;&#x8981;&#x5B9E;&#x73B0;Git&#x63D0;&#x4EA4;&#x6E90;&#x7801;&#x540E;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#xFF0C;&#x53EF;&#x5C06;&#x7B2C;&#x4E09;&#x7AE0;&#x4E0E;&#x672C;&#x7AE0;&#x6559;&#x7A0B;&#x7ED3;&#x5408;&#x4F7F;&#x7528;</strong>&#x3002;</p>
+</li>
+<li><h4 id="&#x524D;&#x671F;&#x51C6;&#x5907;">&#x524D;&#x671F;&#x51C6;&#x5907;</h4>
+<p> 1&#x3001;<strong>&#x5B89;&#x88C5;Ionic</strong>&#xFF0C;&#x7531;&#x4E8E;&#x7F16;&#x8BD1;&#x9700;&#x8981;&#x7528;&#x5230;Ionic&#xFF0C;&#x5982;Jenkins&#x670D;&#x52A1;&#x5668;&#x672A;&#x5B89;&#x88C5;Ionic,&#x8BF7;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C; <code>npm install -g ionic</code>&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x3002;<br> 2&#x3001;<strong>&#x9489;&#x9489;&#x901A;&#x77E5;</strong>&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x6784;&#x5EFA;&#x7ED3;&#x679C;&#x901A;&#x8FC7;&#x9489;&#x9489;&#x8FDB;&#x884C;&#x53CA;&#x65F6;&#x901A;&#x77E5;&#x7684;&#x8BDD;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;Jenkins-&gt;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;-&gt;&#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x4E2D;&#x5B89;&#x88C5;<strong>Dingding[&#x9489;&#x9489;]&#x63D2;&#x4EF6;</strong>&#x3002;</p>
+</li>
+<li><h4 id="&#x65B0;&#x5EFA;jenkins&#x4EFB;&#x52A1;">&#x65B0;&#x5EFA;Jenkins&#x4EFB;&#x52A1;</h4>
+ 1&#x3001;<strong>General</strong>&#xFF0C;&#x586B;&#x5199;&#x4EFB;&#x52A1;&#x63CF;&#x8FF0;&#x3002;<br> 2&#x3001;<strong>&#x6E90;&#x7801;&#x7BA1;&#x7406;</strong>&#xFF0C;&#x52FE;&#x9009;Git&#xFF0C;&#x5728;Repository URL&#x5904;&#x586B;&#x5199;&#x6E90;&#x7801;&#x4ED3;&#x50A8;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5982;&#xFF1A;ssh://sw.gerrit/smart_micro_site_mobile &#xFF1B;&#x5206;&#x652F;&#xFF08;Branch&#xFF09;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x586B;&#x5199;&#x3002;<br> 3&#x3001;<strong>&#x6784;&#x5EFA;</strong>&#xFF0C;&#x589E;&#x52A0; <code>Windows&#x6279;&#x5904;&#x7406;&#x547D;&#x4EE4;</code>&#x6784;&#x5EFA;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x884C; <code>npm install &amp;&amp; ionic build --prod</code>&#x7528;&#x6765;&#x7F16;&#x8BD1;&#x9879;&#x76EE;&#xFF0C;&#x518D;&#x589E;&#x52A0;&#x4E00;&#x4E2A;<code>Windows&#x6279;&#x5904;&#x7406;&#x547D;&#x4EE4;</code>&#x6784;&#x5EFA;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x884C; <code>xcopy www &quot;&#x90E8;&#x7F72;&#x6587;&#x4EF6;&#x5939;&#x7269;&#x7406;&#x8DEF;&#x5F84;&quot; /e /y</code>&#x5C06;&#x53D1;&#x5E03;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x6307;&#x5B9A;&#x90E8;&#x7F72;&#x76EE;&#x5F55;&#x3002;
+ 4&#x3001;<strong>&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;</strong>&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x901A;&#x8FC7;&#x9489;&#x9489;&#x5B9E;&#x65F6;&#x901A;&#x77E5;&#x6784;&#x5EFA;&#x7ED3;&#x679C;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6784;&#x5EFA;&#x540E;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x9489;&#x9489;&#x901A;&#x77E5;&#x5668;&#x914D;&#x7F6E;&#xFF0C;&#x586B;&#x5199;&#x9489;&#x9489;access token&#xFF0C;&#x4EE5;&#x53CA;&#x52FE;&#x9009;&#x9700;&#x8981;&#x901A;&#x77E5;&#x7684;&#x72B6;&#x6001;&#x5373;&#x53EF;&#x3002;<blockquote>
+<p>&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x9489;&#x9489;access token</p>
+<ul>
+<li>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x9489;&#x9489;&#x7FA4;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7FA4;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x662F;&#x7BA1;&#x7406;&#x5458;&#x662F;&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x7FA4;&#x673A;&#x5668;&#x4EBA;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7FA4;&#x6765;&#x6D4B;&#x8BD5;&#x3002;</li>
+<li>&#x7FA4;&#x673A;&#x5668;&#x4EBA;&#x521B;&#x5EFA;&#x597D;&#x540E;&#x627E;&#x5230;webhook&#xFF0C;&#x5176;&#x4E2D;webhook&#x7684;access_token&#x53C2;&#x6570;&#x7684;&#x503C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x7684;&#x9489;&#x9489;access token&#x3002;</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="end">End</h3>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.html" class="navigation navigation-prev " aria-label="Previous page: 第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第六章-Jenkins实现钉钉消息通知自定义.html" class="navigation navigation-next " aria-label="Next page: 第六章-Jenkins实现钉钉消息通知自定义">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第五章-Jenkins前端项目的自动编译和部署","level":"1.3.5","depth":2,"next":{"title":"第六章-Jenkins实现钉钉消息通知自定义","level":"1.3.6","depth":2,"path":"Jenkins系列教程/第六章-Jenkins实现钉钉消息通知自定义.md","ref":"Jenkins系列教程/第六章-Jenkins实现钉钉消息通知自定义.md","articles":[]},"previous":{"title":"第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署","level":"1.3.4","depth":2,"path":"Jenkins系列教程/第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.md","ref":"Jenkins系列教程/第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Jenkins系列教程/第五章-Jenkins前端项目的自动编译和部署.md","mtime":"2019-07-05T07:04:58.416Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-05T09:27:44.938Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
