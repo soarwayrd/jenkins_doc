@@ -1,0 +1,20 @@
+{
+	"plugins": [
+		"-highlight", 
+		"prism", 
+		"prism-themes"
+	],
+	"pluginsConfig": {
+	  "prism": {
+		"css": [
+		  "prismjs/themes/prism-tomorrow.css"
+		]
+	  },
+	  "theme-default": {
+         "showLevel": true
+	  }
+	},
+	"structure": {
+        "readme": "SUMMARY.md"
+    }
+}

@@ -1,6 +1,5 @@
 ﻿# Summary
 
-* [Introduction](README.md)
 * [概述](SUMMARY.md)
 * [Jenkins系列教程]
   * [第一章-Jenkins的安装和功能介绍](/Jenkins系列教程/第一章-Jenkins的安装和功能介绍.md)
