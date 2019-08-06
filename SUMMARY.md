@@ -8,3 +8,4 @@
   * [第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署](/Jenkins系列教程/第四章-Jenkins使用MSBuild实现服务端项目的自动编译和部署.md)
   * [第五章-Jenkins前端项目的自动编译和部署](/Jenkins系列教程/第五章-Jenkins前端项目的自动编译和部署.md)
   * [第六章-Jenkins实现钉钉消息通知自定义](/Jenkins系列教程/第六章-Jenkins实现钉钉消息通知自定义.md)
+  * [第七章-Jenkins实现构建过程邮件消息通知](/Jenkins系列教程/第七章-Jenkins实现构建过程邮件消息通知.md)
