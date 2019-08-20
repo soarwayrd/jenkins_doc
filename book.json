@@ -16,5 +16,8 @@
 	},
 	"structure": {
         "readme": "SUMMARY.md"
-    }
+    },
+	"styles": {
+		"website": "styles/website.css"
+	}
 }
